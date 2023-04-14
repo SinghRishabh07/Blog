@@ -1,9 +1,8 @@
-import { NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import { USER_FILE_PATH } from '@/constants';
-import { UserApiRequest } from '@/types';
 
-export default async function handler(req: UserApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
         if (req.method === 'GET') {
             const file = fs.readFileSync(USER_FILE_PATH);
