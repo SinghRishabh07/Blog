@@ -8,7 +8,7 @@ export interface User {
 export interface Blog {
     title: string;
     content: string;
-    timestamp: string;
+    timestamp: number;
     username: string;
 }
 
@@ -19,10 +19,5 @@ export interface BlogApiRequest extends NextApiRequest {
         username: string;
     };
 }
-export interface UserApiRequest extends NextApiRequest {
-    body: {
-        username: string;
-        password: string;
-    };
-}
+
 

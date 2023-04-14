@@ -1,23 +1,45 @@
-import Division from '@/component/division';
-import Greet from '@/component/greet';
-import InputField from '@/component/inputField';
-import Navbar from '@/component/navbar';
 import Head from 'next/head';
+import styles from '@/styles/login.module.css';
+import { useRef, useState } from 'react';
+import { useUserData } from '../context/userData.context';
+import HomePage from '../component/homePage';
 
-import { useEffect, useState } from 'react';
 
 export default function Home() {
-    const [data, setData] = useState<any[]>([]);
+    const [userName, setUserName] = useUserData()!;
 
-    useEffect(() => {
-        (async () => {
-            const res = await fetch('/api/blog');
-            const data = await res.json();
-            if (!data.error) setData(data.data);
-        })();
-    }, []);
+    const userRef = useRef<HTMLInputElement>(null);
 
-    console.log(data);
+    const passwordRef = useRef<HTMLInputElement>(null);
+    
+    // const [toggle, setToggle] = useState(false);
+
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        const option = {
+            method: 'POST',
+            body: JSON.stringify({
+                username: userRef.current?.value,
+                password: passwordRef.current?.value
+            })
+        };
+
+        console.log('userName is : ' + `${userRef.current?.value}`);
+        console.log('password is : ' + `${passwordRef.current?.value}`);
+
+        const res = await fetch('/api/login', option);
+        const data = await res.json();
+        if (!data.error) {
+            alert(data.message);
+            console.log(data.message, data.login);
+        }
+
+        if (data.login) {
+            setUserName(`${userRef.current?.value}`);
+            localStorage.setItem('name',(`${userRef.current?.value}`));
+            console.log("username-index" + `${userName}`);
+        }
+    };
 
     return (
         <>
@@ -27,10 +49,41 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Navbar />
-            <Greet />
-            <Division />
-            <InputField data={data} />
+
+            {userName ? (
+                <HomePage />
+            ) : (
+                <div className={styles.landingPage}>
+                    <form onSubmit={handleSubmit} className={styles.loginDetails}>
+                        <div className={styles.header}>LOGIN</div>
+
+                        <div className={styles.inputField}>
+                            <input
+                                type="text"
+                                ref={userRef}
+                                required
+                                autoComplete="off"
+                            />
+                            <label>Username</label>
+                        </div>
+
+                        <div className={styles.inputField}>
+                            <input
+                                type="password"
+                                ref={passwordRef}
+                                required
+                                autoComplete="off"
+                            />
+                            <label>Password</label>
+                        </div>
+                        
+
+                        <button type="submit" className={styles.loginBtn}>
+                            Login
+                        </button>
+                    </form>
+                </div>
+            )}
         </>
     );
 }

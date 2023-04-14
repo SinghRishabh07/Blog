@@ -1,0 +1,86 @@
+@font-face {
+    font-family: fuzzyBubble;
+    src: url('../../public/myFonts/FuzzyBubbles-Regular.ttf');
+  }
+
+
+.landingPage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.loginDetails{
+    width:25%;
+    height:40%;
+    font-family: fuzzyBubble;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0px 0px 36px 1px #B1B2FF;
+    border-radius: 7px;
+}
+.header{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.inputField{
+    width:80%;
+    position: relative;
+}
+
+.inputField input{
+    width: 100%;
+    font-family: fuzzyBubble;
+    font-size: 1rem;
+    color: white;
+    letter-spacing: 1px;
+    border: none;
+    border-bottom: 2px solid #AAC4FF;
+    outline: none;
+    margin-bottom: 20px;
+    padding-bottom: 0.3rem;
+    cursor: pointer;
+}
+
+.inputField label{
+    position: absolute;
+    top:0vh;
+    left:0vw;
+    font-size: 1rem;
+    padding-bottom: 0.2rem;
+    color:#fff;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.inputField input:focus ~ label,
+.inputField input:valid ~ label{
+    top:-3vh;
+    left:0vw;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.loginBtn{
+    width:30%;
+    height:10%;
+    font-family: fuzzyBubble;
+    font-size: 1rem;
+    background-color: #2dac31; 
+    border: none;
+    color:white;
+    cursor:pointer;
+    border-radius: 3px;
+}
+
+.loginBtn:hover{
+    background-color: #0bae11;
+}
+
+
+

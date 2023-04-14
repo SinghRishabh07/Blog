@@ -1,8 +1,21 @@
 [
-    {
-        "title": "post 1",
-        "content": "content 1",
-        "username": "ris",
-        "timestamp": "1679177470181"
-    }
+    { "title": "Mukul", "content": "qwerty", "username": "mukul", "timestamp": 1679663780206 },
+    { "title": "heeloooo", "content": "I m a coder", "username": "mukul", "timestamp": 1679670346076 },
+    { "title": "ANime", "content": "AOt is the best anime of all time", "username": "rishabh", "timestamp": 1679671140645 },
+    { "title": "yo", "content": "yoyoyooyoyoy", "username": "rishabh", "timestamp": 1679671329059 },
+    { "title": "Mukul", "content": "yes yes yes", "username": "mukul", "timestamp": 1679761244312 },
+    { "title": "Chess", "content": "Magnus is the best player of all time", "username": "mukul", "timestamp": 1679761859687 },
+    { "title": "Chess", "content": "hikaru nakamura", "username": "mukul", "timestamp": 1679762120074 },
+    { "title": "Chess", "content": "Vishy Anand", "username": "bhavye", "timestamp": 1679763290737 },
+    { "title": "cod", "content": "rus-76, DLQ-33", "username": "bhavye", "timestamp": 1679765244868 },
+    { "title": "Valorant", "content": "Chamber", "username": "bhavye", "timestamp": 1679765258640 },
+    { "title": "Chess", "content": "king's Gambit", "username": "rishabh", "timestamp": 1679811392413 },
+    { "title": "Chess", "content": "Queen's Gambit", "username": "rishabh", "timestamp": 1679811431797 },
+    { "title": "Mukul", "content": "Best coder", "username": "rishabh", "timestamp": 1679811551133 },
+    { "title": "cod", "content": "Crossfire is the best map for sniping ", "username": "bhavye", "timestamp": 1680010269239 },
+    { "title": "Valorant", "content": "I have no clue about valorant :(", "username": "mukul", "timestamp": 1680016190273 },
+    { "title": "cod", "content": "Type-25", "username": "mukul", "timestamp": 1680016250681 },
+    { "title": "ANime", "content": "Currently Watching Stein's Gate", "username": "rishabh", "timestamp": 1680016398041 },
+    { "title": "About Me", "content": "I am an asshole", "username": "Kovid", "timestamp": 1680201324682 },
+    { "title": "Chess", "content": "Mayank vs RIshabh", "username": "rishabh", "timestamp": 1680718087198 }
 ]

@@ -1,15 +1,16 @@
-import { NextApiResponse } from 'next';
+import { NextApiResponse, NextApiRequest } from 'next';
 import fs from 'fs';
 import { BLOG_FILE_PATH, USER_FILE_PATH } from '@/constants';
-import { Blog, BlogApiRequest, User } from '@/types';
+import { Blog, User } from '@/types';
 
-export default async function handler(req: BlogApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
         if (req.method === 'GET') {
             const file = fs.readFileSync(BLOG_FILE_PATH);
             return res.status(200).send({ error: false, data: JSON.parse(file.toString()) });
         } else if (req.method === 'POST') {
-            const blog = { ...req.body, timestamp: Date.now().toString() };
+            const data = JSON.parse(req.body)
+            const blog = { ...data, timestamp: Date.now()};
 
             const userFile = fs.readFileSync(USER_FILE_PATH);
             const users: User[] = JSON.parse(userFile.toString());

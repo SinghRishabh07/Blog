@@ -1,6 +1,6 @@
 [
-    {
-        "username": "ris",
-        "password": "123"
-    }
+    { "username": "mukul", "password": "12345" },
+    { "username": "rishabh", "password": "123" },
+    { "username": "bhavye", "password": "smartass" },
+    { "username": "Kovid", "password": "kovid" }
 ]
